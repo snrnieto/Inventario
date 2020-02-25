@@ -2,7 +2,9 @@ const cacheName = 'cache-landing';
 const staticAssets = [
   './',
   './index.html',
-  './estilos.css',
+  './productos.html',
+  './productos2.html',
+  './codigo-vue.js',
   './index.js'
 ];
 
