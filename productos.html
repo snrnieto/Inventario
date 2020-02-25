@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+        
+          <v-app-bar app color="blue-grey darken-4">
+              <v-app-bar-nav-icon class="white--text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+              <v-toolbar-title class="white--text title">Sistema de Inventarios</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-avatar color="grey darken-1">
+                  <span class="white--text headline">SN</span>
+              </v-avatar>
+          </v-app-bar>
+        
+          
+          <v-content>
+            
+            <v-container fluid>
+                <template>
+                    <v-simple-table :headers="headers">
+                        <template>
+                          <thead>
+                            <tr>
+                              <th class="text-left">Producto</th>
+                              <th class="text-left">Cantidad</th>
+                              <th class="text-left">Precio</th>
+                              <th>Foto</th>
+                              <th>Acciones</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="item in desserts" :key="item.name">
+                              <td>{{ item.name }}</td>
+                              <td>{{ item.cantidad }}</td>
+                              <td>{{ item.precio }}</td>
+                              <td><v-img max-width="200" src="https://cdn.pixabay.com/photo/2016/03/27/19/44/fashion-1283944_960_720.jpg"></v-img></td>
+                              <td >
+                                <v-icon
+                          
+                                class="mr-2 amber--text"
+                                @click="editItem(item)"
+                              >
+                                mdi-pencil
+                              </v-icon>
+                              <v-icon
+                                
+                                @click="deleteItem(item)"
+                                class="red--text"
+                              >
+                                mdi-delete
+                              </v-icon>
+      
+                              </td >
+                            </tr>
+                          </tbody>
+                        </template>
+                      </v-data-iterator>    
+                </template>
+            </v-container>
+          </v-content>
+        
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="codigo-vue.js"></script>
+</body>
+</html>
