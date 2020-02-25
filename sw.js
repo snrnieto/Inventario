@@ -5,7 +5,7 @@ const staticAssets = [
   './productos.html',
   './productos2.html',
   './codigo-vue.js',
-  './index.js'
+  './main.js'
 ];
 
 self.addEventListener('install', async e => {
